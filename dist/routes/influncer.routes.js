@@ -1,0 +1,12 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = require("express");
+const influencerController_1 = require("../controllers/influencerController");
+const router = (0, express_1.Router)();
+router.post('/saveInf', influencerController_1.createInfluencer);
+router.get('/getInf', influencerController_1.getTodosInfluencer);
+router.put('/updateInf/:id', influencerController_1.updateInfluencer);
+router.delete("/deleteInf/:id", influencerController_1.deleteInfluencer);
+router.post("/addFavorite/:id", influencerController_1.habilitadoInfluencer);
+router.post("/removeFavorite/:id", influencerController_1.desabilitadoInfluencer);
+exports.default = router;
